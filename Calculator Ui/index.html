@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+
+        
+        .main>h1{
+            color: rgb(8, 121, 121);
+            text-align: center;
+            
+        }
+        
+        .cal{
+            height: 500px;
+            width: 400px;
+            /* border: 1px solid red; */
+            margin: auto;
+            /* box-shadow: 2px 2px #575555; */
+            box-shadow: 1px 1px 1px 3px rgb(122, 120, 120);
+    
+        }
+
+        .cal>#cal1{
+            
+            height: 80px;
+            width: 350px;
+            /* border: 1px solid red; */
+            margin: 10px;
+            margin-top: 20px;
+            background-color: aliceblue;
+            /* box-shadow: 1px 1px 1px 1px rgb(145, 143, 143); */
+            box-shadow: 0px 2px 2px 2px rgb(251, 251, 61);
+
+        }
+
+        .cal>#cal2{
+            
+            height: 70px;
+            width: 350px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 20px;
+            background-color: aliceblue;
+            display: flex;
+            /* box-shadow: 1px 1px 1px 1px rgb(145, 143, 143); */
+            padding: 2px;
+
+
+        }
+
+        .cal>#cal2>div{
+            height: auto;
+            width: 100%;
+            /* border: 1px solid red; */
+            text-align: center;
+            /* box-shadow: 1px 1px 1px 1px rgb(145, 143, 143); */
+            
+
+        }
+        .cal>#cal2>#cal24{
+            color: aliceblue;
+        }
+
+
+/* 
+        for last button colors  */
+        .cal>#cal2>#cal24{
+           background-color: black;
+
+        }
+
+        .cal>#cal3>#cal34{
+           background-color: black;
+
+        }
+        .cal>#cal4>#cal44{
+           background-color: black;
+
+        }
+        .cal>#cal5>#cal51{
+           background-color: red;
+
+        }
+        .cal>#cal5>#cal53{
+           background-color: black;
+
+        }
+        .cal>#cal5>#cal54{
+           background-color: black;
+
+        }
+
+
+        .cal>#cal3{
+            
+            height: 70px;
+            width: 350px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 20px;
+            background-color: aliceblue;
+            display: flex;
+
+
+        }
+
+        .cal>#cal3>div{
+            height: auto;
+            width: 100%;
+            text-align: center;
+            /* border: 1px solid red; */
+
+        }
+        .cal>#cal3>#cal34{
+            color: aliceblue;
+        }
+
+        .cal>#cal4{
+            
+            height: 70px;
+            width: 350px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 20px;
+            background-color: aliceblue;
+            display: flex;
+
+
+        }
+
+        .cal>#cal4>div{
+            height: auto;
+            width: 100%;
+            text-align: center;
+            /* border: 1px solid red; */
+
+        }
+        .cal>#cal4>#cal44{
+            color: aliceblue;
+        }
+
+        .cal>#cal5{
+            
+            height: 70px;
+            width: 350px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 20px;
+            background-color: aliceblue;
+            display: flex;
+
+
+        }
+
+        .cal>#cal5>div{
+            height: auto;
+            width: 100%;
+            text-align: center;
+            /* border: 1px solid red; */
+
+        }
+        .cal>#cal5>#cal54, #cal53{
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Masai Calculator</h1>
+    </div>
+
+    <div class="cal">
+        <div id="cal1">
+            <!-- is that for input box -->
+
+            
+        </div>
+
+        <div id="cal2">
+            <div>
+                <h3>1</h3>
+            </div>
+
+            <div>
+                <h3>2</h3>
+            </div>
+
+            <div>
+                <h3>3</h3>
+            </div>
+
+            <div id="cal24">
+                <h3>+</h3>
+            </div>
+        </div>
+
+        <div id="cal3">
+            <div>
+                <h3>4</h3>
+            </div>
+
+            <div>
+                <h3>5</h3>
+            </div>
+
+            <div>
+                <h3>6</h3>
+            </div>
+
+            <div id="cal34">
+                <h3>-</h3>
+            </div>
+
+        </div>
+
+        <div id="cal4">
+
+            <div>
+                <h3>7</h3>
+            </div>
+
+            <div>
+                <h3>8</h3>
+            </div>
+
+            <div>
+                <h3>8</h3>
+            </div>
+
+            <div id="cal44">
+                <h3>x</h3>
+            </div>
+        </div>
+
+        <div id="cal5">
+
+            <div id="cal51">
+                <h3>C</h3>
+            </div>
+
+            <div>
+                <h3>0</h3>
+            </div>
+            
+            <div id="cal53">
+                <h3>=</h3>
+            </div>
+
+            <div id="cal54">
+                <h3>/</h3>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
