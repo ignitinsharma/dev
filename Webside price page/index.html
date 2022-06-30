@@ -31,23 +31,24 @@
         }
 
         .childbox{
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 300px;
             width: 80%;
             /* border: 1px solid red; */
-            height: 300px;
             margin: auto;
             
             
         }
         .childbox>div{
-            width: 30%;
-            /* border: 1px solid red; */
-            height: 300px;
+            
             margin: auto;
-            text-align: center;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 90%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             padding: 10px 20px 10px 20px;
-
+            text-align: center;
+            padding: 0px 0px 20px;
+    
            
             
             
@@ -58,6 +59,7 @@
         .childbox>div>p+p{
             line-height: 22px;
             font-size: 15px;
+            padding: 0px 10px 0px 10px;
         }
         .childbox>div>button{
             border: 1px solid blue;
@@ -87,13 +89,33 @@
             color: rgb(0, 60, 255);
         }
 
-        @media all and (min-width: 320px) and (max-width: 480px){
-            .childbox>div{
+        @media all and (min-width: 481px) and (max-width: 768px){
+            .childbox{
                
-           grid-template-columns: repeat(1, 200px);
-            grid-template-rows: repeat(3,200px);
+           grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2,1fr);
 
         }
+
+        #main>h1,p{
+            width:70%;
+        
+        }
+    }
+        /* all opeartions performe on parent div or sat container */
+
+    @media all and (min-width: 0px) and (max-width: 480px){
+            .childbox{
+               
+           grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3,1fr);
+        }
+        #main>h1,p{
+            width:70%;
+        
+        }
+
+
     }
 
     </style>
