@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price plan page</title>
     <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         #main>h1{
             width: 35%;
             margin: auto;
             text-align: center;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             margin-bottom: 20px;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -19,10 +22,10 @@
             width: 40%;
             margin: auto;
             text-align: center;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             font-family: Arial, Helvetica, sans-serif;
             color: grey;
-            margin-bottom:50px;
+            margin-bottom:70px;
         
 
         }
@@ -30,7 +33,7 @@
         .childbox{
             display: flex;
             width: 80%;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             height: 300px;
             margin: auto;
             
@@ -38,12 +41,61 @@
         }
         .childbox>div{
             width: 30%;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             height: 300px;
             margin: auto;
+            text-align: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 10px 20px 10px 20px;
+
+           
             
             
         }
+        .childbox>div>h2+p{
+            font-style: italic;
+        }
+        .childbox>div>p+p{
+            line-height: 22px;
+            font-size: 15px;
+        }
+        .childbox>div>button{
+            border: 1px solid blue;
+            color: blue;
+            padding: 10px 20px 10px 20px;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 10px
+            
+
+        }
+        .childbox>div>button:hover{
+            /* border: 1px solid blue; */
+            color: white;
+            padding: 10px 20px 10px 20px;
+            background-color: rgb(0, 60, 255);
+            
+
+        }
+        .childbox>#p1>h2{
+            color: green;
+        }
+        .childbox>#p2>h2{
+            color: orangered;
+        }
+        .childbox>#p3>h2{
+            color: rgb(0, 60, 255);
+        }
+
+        @media all and (min-width: 320px) and (max-width: 480px){
+            .childbox>div{
+               
+           grid-template-columns: repeat(1, 200px);
+            grid-template-rows: repeat(3,200px);
+
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -52,15 +104,27 @@
         <p>We collect review from our users so you can get honest opinion what an exprirence with our website are really like</p>
     </div>
     <div class="childbox">
-        <div>
-            <div>Starter Plan</div>
-            <div>Free</div>
+        <div id="p1">
+            <h3>Starter Plan</h3>
+            <h2>Free</h2>
+            <P>Per month</P> 
+            <p>We collect review from our users so you can get honest opinion what an exprirence with our website are really like</p>
+            <button>Start Now</button>
+        </div>
+        <div id="p2">
+            <h3>Business Plan</h3>
+            <h2>$39.00</h2>
             <P>Per month</P>
             <p>We collect review from our users so you can get honest opinion what an exprirence with our website are really like</p>
-            <button></button>
+            <button>Start Now</button>
         </div>
-        <div></div>
-        <div></div>
+        <div id="p3">
+            <h3>Premium Plan</h3>
+            <h2>$59.00</h2>
+            <P>Per month</P>
+            <p>We collect review from our users so you can get honest opinion what an exprirence with our website are really like</p>
+            <button>Start Now</button>
+        </div>
     </div>
 </body>
 </html>
