@@ -1,28 +1,42 @@
-let form=document.querySelector("form");
-form.addEventListener("submit",masaiemp);
-let arr=[];
-function masaiemp(){
-    event.preventDefault();
+
+
+// here we select form 
+//then we put event lis on submit forms's submit button so then enter query come here
+let getform=document.querySelector("form")
+.addEventListener("click", myfunction);
+
+let arrall=[];
+let tbody=document.querySelector("tbody");
+
+function myfunction(event){
+    event.preventDefault(); 
+
+
+    // i created this obj for capturing the values from form and stored in this object 
     let obj={
-        name:document.querySelector("#name").value,
-        id:document.querySelector("#employeeID").value,
-        dept:document.querySelector("#department").value,
-        expe:document.querySelector("#exp").value,
+        ename: document.querySelector("#name").value,
+        eID: document.querySelector("#employeeID").value,
+        dep:document.querySelector("#department").value,
+        exp:document.querySelector("#exp").value,
         email:document.querySelector("#email").value,
-        mobile:document.querySelector("#mbl").value,
-    }
+        mno:document.querySelector("#mbl").value,
+    };  
 
     arr.push(obj);
 
+    display(arrall);
 
-    display(arr);
 
+    function display(arrall){
+        
+        //empty because we dont want previous data again and again
+        document.querySelector("tbody").innerHTML="";
 
-    function display(arr){
-     document.querySelector("tbody").innerHTML="";
+        arr.forEach(function (el) {
+        //create a table row for storing the table column data
+        let tr= document.createElement("tr");
 
-     arr.forEach(function (el) {
-        let row=document.createElement("tr");
+        //creating table col inside 
         let col1=document.createElement("td");
         let col2=document.createElement("td");
         let col3=document.createElement("td");
@@ -31,35 +45,52 @@ function masaiemp(){
         let col6=document.createElement("td");
         let col7=document.createElement("td");
         let col8=document.createElement("td");
-       
-        row.append(col1,col2,col3,col4,col5,col6,col7,col8);
-        document.querySelector("tbody").append(row);
 
+        //append column into main table row
+        tr.append(col1,col2,col3,col4,col5,col6,col7,col8);
 
-        col1.innerText=el.name;
-        col2.innerText=el.id;
-        col3.innerText=el.dept;
-        col4.innerText=el.expe;
-        if(el.expe>5){
-            col7.innerText="Senior"
-        }
-        else if(el.expe>1 && el.expe<5){
-            col7.innerText="Junior"
-        }
-        else{
-            col7.innerText="Trainee"
-        }
+        //append main table row into table body
+        tbody.append(tr);
 
+        col1.innerText=el.ename;
+        col2.innerText=el.eID;
+        col3.innerText=el.dep;
+        col4.innerText=el.exp;
 
-        col5.innerText=el.email;
-        col6.innerText=el.mobile;
-        col8.innerText="Delete"
-
-        col8.style.color="red";
-        col8.addEventListener("click",function (){
-            event.target.parentNode.remove()
-        })
+         //this constion will check expirence and give output to 
+         //column 7 section
         
-         });
+        col5.innerText=el.email;
+        col6.innerText=el.mno;
+        col6.innerText=checkrole();
+        col8.innerText="Delete";
+
+        //create event listener when someone click on delete ....
+        //for removing particular row by clicking on button
+        col8.addEventListener("click", delfun);
+
+            function delfun(event){
+                event.target.parentNode.remove();
+                
+            }
+        
+            //change delete button color
+        col8.style.color="red";
+
+       
+        });
+
+        function checkrole(exp){
+            if(el.exp>5){
+                return "Senior"
+            }
+            else if(el.exp>1 && el.exp<5){
+                return "Junior"
+            }
+            else{
+                return "Trainee"
+            }
+        }
+
     }
 }
