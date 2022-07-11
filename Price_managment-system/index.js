@@ -1,3 +1,6 @@
+// deploy link->https://price-managment-nitin.netlify.app/
+
+
 
 document.querySelector("form").addEventListener("submit", myfun);
 
