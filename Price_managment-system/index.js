@@ -1,90 +1,82 @@
-// deploy link->https://price-managment-nitin.netlify.app/
-
-
-
-document.querySelector("form").addEventListener("submit", myfun);
-
-
+document.querySelector("form").addEventListener("submit",myfun)
 let arr=[];
-function myfun(){
-    event.preventDefault();
-     let obj={
-        pname:document.querySelector("#name").value,
-        category:document.querySelector("#category").value,
-        brand:document.querySelector("#brand").value,
-        prange:document.querySelector("#price").value,
-        delivery:document.querySelector("#deliveredBy").value,
-     };
+function myfun (){
+    event.preventDefault()
+    let obj={
+        //define objects names or our input which are in form
 
-     arr.push(obj);
+        proname:document.querySelector("#name").value,
+         procat:document.querySelector("#category").value,
+         probra:document.querySelector("#brand").value,
+         propri:document.querySelector("#price").value,
+         prodel:document.querySelector("#deliveredBy").value
+    }
 
-    mainfun(arr);
+    arr.push(obj)
+    display(arr)
 
-    function mainfun(arr){
+    function display(arr){
+        // empty tbody because it is starting of our loop
         document.querySelector("tbody").innerHTML="";
 
-        arr.forEach(function(el){
-            
-            let row= document.createElement("tr");
-            let col1=document.createElement("td");
-            let col2=document.createElement("td");
-            let col3=document.createElement("td");
-            let col4=document.createElement("td");
-            let col5=document.createElement("td");
-            let col6=document.createElement("td");
-            let col7=document.createElement("td");
-            // let col9=document.createElement("td");
-            
-            document.querySelector("tbody").append(row)
-            row.append(col2,col1,col3,col4,col5,col6,col7);
-            
+        arr.forEach(function (el) {
 
-            col1.innerText=el.category;
-            col2.innerText=el.pname;
-            col3.innerText=el.brand;
-            col4.innerText=el.prange;
-            col5.innerText=el.delivery;
-            
-            if(el.prange>1000){
-                return col6.innerText="Expensive";
-            }
-            else if(el.prange<1000){
-                return col6.innerText="Not-Expensive";
-            }
-            
-            col7.innerText="delete"
-            col7.addEventListener("click", function out(){
-                event.target.parentNode.remove()
-            });
+            //creation of rows and columns that will be add on tbody area
 
-            
-
-            if(col3.innerText=="" || col2.innerText=="" || col1.innerText=="" || col4.innerText=="" || col5.innerText==""){
-                alert("Fill all input fields");
-                document.querySelector("tbody").innerHTML="";
-            }
+        let row=document.createElement("tr");
+        let c1=document.createElement("td");
+        let c2=document.createElement("td");
+        let c3=document.createElement("td");
+        let c4=document.createElement("td");
+        let c5=document.createElement("td");
+        let c6=document.createElement("td");
+        let c7=document.createElement("td");
+        
+        document.querySelector("tbody").append(row);
+        row.append(c1,c2,c3,c4,c5,c6,c7);
 
 
-            
 
-            
-            
-        })
+            // assigning values to our columns
+
+        c1.innerText=el.proname;
+        c2.innerText=el.procat;
+        c3.innerText=el.probra;
+        c4.innerText=el.propri;
+        c5.innerText=el.prodel;
+        
+        //  condition for our price segment section
+
+        if(el.propri>1000){
+            c6.innerText="Expensive"
+        }
+        else{
+            c6.innerText="Not-Expensive"
+        }
+
+        // creation of delete button and its functionality
+
+        c7.innerText="Delete"
+        c7.addEventListener("click",function del(){
+            event.target.parentNode.remove()
+        })  
+ 
+        // functionality of alert 
+
+        if(c1.innerText=="" || c2.innerText==""||c3.innerText==""||c4.innerText==""||c5.innerText==""){
+            alert("Fill All Input Fields")
+            document.querySelector("tbody").innerHTML="";
+        }
+ 
+    });
        
-        
-        
-    }
+ }
+
+    // functionality of total price function
 
     let sum=0;
-    for(let i=0; i<=arr.length; i++){
-        sum+= Number(arr[i].prange);
-
+    for(let x=0;x<arr.length;x++){
+    sum+=Number(arr[x].propri);
     }
-    document.querySelector("#total-price").innerHTML="Total Price:-" + " "+ sum;
-
-
-}
-
-
-
-
+    document.querySelector("#total-price").innerHTML="Total-price:-"+" "+sum;
+ }
