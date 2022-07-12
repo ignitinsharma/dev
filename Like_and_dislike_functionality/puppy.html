@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <style>
+
+       
+        #buttonidv>button{
+            margin-top: 20px;
+            margin-left: 100px;
+            padding: 10px 30px;
+            color: rgb(255, 255, 255);
+            background-color: #4CAF50;
+            border-radius: 10px;
+        }
+
+        #buttonidv>div{
+            margin-top: 20px;
+            margin-left: 100px;
+            font-size: 20px;
+
+
+        }
+
+    </style>
+  </head>
+  <body>
+	<div>
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=640:*" alt="">
+        <div id="buttonidv">
+            <div id="clickid"><b>Like count:- <span id="spainid"></span></b></div>
+            <div id="clickid2"><b>DisLike count:- <span id="spainid2"></span></b> </div>
+            <button>Like</button>
+            <button>DisLike</button>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+
+//   let likecount=0; -. first count was zero but when we refesh our page count value got zero
+// so them catch count value from previous local stored value on like fun 2nd lime line  
+let likecount;
+// let likecount=localStorage.getItem("likeforpuppy");  - first default we are using this 
+
+//if value isnt avilale in Local stoage so we can use default count value as we want...
+if(localStorage.getItem("likeforpuppy")==null){
+    likecount=0;
+
+}
+else{
+    //in esle case if value is avilavle in local storage so we can print the local storage value
+    likecount=localStorage.getItem("likeforpuppy");// assign the local storge value into like count
+}
+//in same case local storage value goonna delete or not found so what is the default value of locak storge 
+//at this case we can use loops instead of dirct acessing values
+
+
+let Dislikecount;
+// let likecount=localStorage.getItem("likeforpuppy");  - first default we are using this 
+
+//if value isnt avilale in Local stoage so we can use default count value as we want...
+if(localStorage.getItem("dislikeforpuppy")==null){
+    Dislikecount=0;
+
+}
+else{
+    //in esle case if value is avilavle in local storage so we can print the local storage value
+    Dislikecount=localStorage.getItem("dislikeforpuppy");
+
+}
+
+//this is catching the button one
+let likevalue= document.querySelector("#buttonidv>button")
+.addEventListener("click",likefun);
+
+
+//this function envoke when someone click on like button
+function likefun(){
+    likecount++;
+
+    //storing values into local storage
+    localStorage.setItem("likeforpuppy",likecount); // likeforpuppy is a key name of likecount for storing locally
+   
+    //then below we display that like count value after clicking on count button how much is that we display that on span tag
+    document.querySelector("#spainid").innerText=likecount;
+    
+}
+
+
+let disvalue= document.querySelector("#buttonidv>button+button")
+.addEventListener("click",dislikefun);
+
+function dislikefun(){
+    Dislikecount++;
+
+    //sending data to span tag for display
+    document.querySelector("#spainid2").innerText=Dislikecount;
+
+    //storing values into local storage
+    localStorage.setItem("dislikeforpuppy",Dislikecount)
+   
+}
+
+
+
+
+
+</script>
