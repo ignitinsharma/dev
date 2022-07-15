@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Login</title>
+    <style>
+
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+       #imglogo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        }
+
+        #main{
+            margin-top: 200px;
+            width: 35%;
+            height: auto;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border: 0px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 40px;
+
+        }
+
+        #main>#pmain{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #main>input{
+            padding: 10px 20px;
+            width: 75%;
+            margin-left: 20px;
+        }
+
+        #main>h3{
+            text-align: center;
+        }
+
+        #main>#smallp{
+            font-size: 12px;
+            text-align: center;
+            margin-left: 20px;
+            margin-right: 40px;
+            padding: 10px 0px;
+        }
+        
+        form>#main>#btn{
+            width: 80%;
+            height: auto;
+            padding: 10px 10px;
+            margin-left: 30px;
+            border: 0px;
+            /* padding-bottom: 20px; */
+            justify-content: center;
+            color: rgb(154, 26, 26);
+            background-color: rgb(255, 255, 255);
+            font-size: 20px;
+            text-align: center;
+        }
+
+        form>#main>#btn:hover{
+
+            color: rgb(243, 243, 243);
+            background-color: rgb(202, 31, 31);
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <img id="imglogo"src="https://sso.masaischool.com/brand_dark.svg" alt="">
+    
+    <form action="" id="formmain">
+        <div id="main">
+            <h3>Sign Up</h3>
+            <p id="pmain">Full name</p>
+            <input type="nane" name="" placeholder="Enter your full name" id="name">
+            <p id="pmain">Email</p>
+            <input type="name" name="" placeholder="Enter email" id="email">
+            <p id="pmain">Password</p>
+            <input type="name" name="" placeholder="Enter password" id="password">
+            <p id="smallp">By sign up up i accept the Masai school Term of services and acknowledge the Privacy Policy.</p>
+            <input type="submit" id="btn">
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    let form=document.querySelector("#formmain");
+    form.addEventListener("submit", mainbtn);
+
+    function mainbtn(){
+        event.preventDefault();
+        let name=document.querySelector("#name").value;
+        let email=document.querySelector("#email").value;
+        let password=document.querySelector("#password").value;
+        console.log("value come")
+
+        localStorage.setItem("setname",name);
+        localStorage.setItem("setemail",email);
+        localStorage.setItem("setpassword",password);
+
+        let iname=localStorage.getItem("setname");
+        let iemail=localStorage.getItem("setemail");
+        let ipassword=localStorage.getItem("setpassword");
+
+        if(iname==name && iemail==email && ipassword!=password){
+            alert("Login sucessful")
+        }
+        else if(iname!=name && iemail!=email &&ipassword!=password){
+            alert("Information is worong")
+            
+        }
+
+
+    }
+
+</script>
