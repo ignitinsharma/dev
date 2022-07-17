@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+</head>
+<style>
+
+    
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+    #imglogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    }
+
+    #maindivforlogin{
+            margin-top: 200px;
+            width: 35%;
+            height: 400ox;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border: 0px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 40px;
+
+        }
+
+        #maindivforlogin>#pmain{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #maindivforlogin>input{
+            padding: 10px 20px;
+            width: 75%;
+            margin-left: 20px;
+        }
+
+        #maindivforlogin>h3{
+            text-align: center;
+        }
+
+      
+        
+        #maindivforlogin>#btn{
+            width: 80%;
+            height: auto;
+            padding: 10px 10px;
+            margin-left: 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 0px;
+            /* padding-bottom: 20px; */
+            justify-content: center;
+            color: rgb(154, 26, 26);
+            background-color: rgb(255, 255, 255);
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #mamaindivforloginin>#btn:hover{
+
+            color: rgb(243, 243, 243);
+            background-color: rgb(202, 31, 31);
+            font-size: 20px;
+        }
+</style>
+<body>
+    <img id="imglogo"src="https://sso.masaischool.com/brand_dark.svg" alt="">
+    <!-- <form action="" id="loginform"> -->
+    <form>
+        <div id="maindivforlogin">
+            <h3>Login</h3>
+            <p id="pmain">Email</p>
+            <input type="name" name="" placeholder="Enter email" id="email">
+            <p id="pmain">Password</p>
+            <input type="name" name="" placeholder="Enter password" id="password">
+            <input type="submit" id="btn"value="login">
+        </div>
+    </form>
+    <!-- </form> -->
+</body>
+</html>
+<script>
+
+    //here firstly we catch login page and then add event listenr on it
+
+    let mainfile=document.querySelector("form");
+    mainfile.addEventListener("submit",myfunctionforlogin);
+    
+    //define login element and catch value from local storage
+    let loginfun;
+    if(JSON.parse(localStorage.getItem("mainarr_value"))==null){
+        loginfun=[];
+    }
+    else {
+        loginfun= JSON.parse(localStorage.getItem("mainarr_value"));
+        //in esle case if value is avilavle in local storage so we can print the local storage value
+        // assign the local storge value into mainarray.....
+    }
+
+    function myfunctionforlogin(){
+        event.preventDefault();
+        
+        //make obj for taking values from user login value for comparing with signup values
+        let obj2={
+        loginemail:document.querySelector("#email").value,
+        loginpassword:document.querySelector("#password").value,
+        }
+        
+        //put foreach on main array because we wanna check or filter values
+        loginfun.forEach(function (element) {
+
+            //comparing values form signup or login values 
+            //element.email kind of sign up vales
+            if(element.email==obj2.loginemail && element.password==obj2.loginpassword){
+            alert("login sucessful")
+            window.location.href="mens.html";
+
+            }
+            
+            else{
+            alert("enter write details")
+            document.querySelector("body").innerText="";
+
+        }
+
+        });
+       
+        
+
+        
+    }
+    
+</script>
