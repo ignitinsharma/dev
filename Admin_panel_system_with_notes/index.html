@@ -9,13 +9,13 @@
 
   <body>
     <div id="navbar">
-      <button id="show_products">Show Products”</button>
+      <button id="show_products"> <a href="inventory.html" style="text-decoration: none;">Show Products</a></button>
       <!--Create Show Products button here, give id as "show_products". avoid making spelling mistakes in HTML id's-->
     </div>
     <div>
       <h2>Add Products</h2>
       <!-- on submit function for direct accessing form also for direct event listner kind of-->
-      <form id="products" onsubmit="productsdata()">
+      <form id="products" onsubmit="productsdata(event)">
         <input type="text" id="type">
         <input type="text" id="desc">
         <input type="number" id="price">
