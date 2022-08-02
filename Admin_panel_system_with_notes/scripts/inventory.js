@@ -62,6 +62,7 @@ display(maindata);
 function deleteitem(ind){
     maindata.splice(ind,1);
 
+    //--> after deleting data form local storage we can use that to save things to local stoage....
     //--> then send updated data to local stoage 
     localStorage.setItem('products', JSON.stringify(maindata))
     

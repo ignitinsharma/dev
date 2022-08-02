@@ -5,6 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      *{
+        text-align: center;
+        background-color: rgb(210, 210, 162);
+      }
+      #products{
+        border: 2px solid black;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        background-color: aliceblue;
+        border-radius: 5px;
+        
+      }
+
+      #products input{
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: 5px 10px;
+        width: 350px;
+        height: 20px;
+        margin-top: 20px;
+        background-color: aquamarine;
+
+      }
+
+      #products:nth-child(5){
+        padding: 20px 20px;
+      }
+    </style>
   </head>
 
   <body>
@@ -15,12 +45,12 @@
     <div>
       <h2>Add Products</h2>
       <!-- on submit function for direct accessing form also for direct event listner kind of-->
-      <form id="products" onsubmit="productsdata(event)">
+      <form id="products" style="text-align: center"; onsubmit="productsdata(event)">
         <input type="text" id="type">
         <input type="text" id="desc">
         <input type="number" id="price">
         <input type="text" id="image">
-        <input type="submit" id="add_product”" value="Add Product">
+        <input type="submit" id="add_product”" style="padding: 20px 20px;" value="Add Product">
       </form>
       <!--Create a form here to accept product data from user, give form HTML id as "products"-->
 
