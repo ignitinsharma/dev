@@ -1,8 +1,12 @@
 //--->> taking data form local storage where user had filled that one data
 let dataarr=JSON.parse(localStorage.getItem("dataurl")) || []
 
+
 //--> for increasing image value every time we have given
 let count=0;
+
+//--> id for using in both of them for setTimeout also for clearinterval
+let mainid;
 
 //--> here we will perfome that operation which happens while clicking one button start
 function start(){
@@ -10,6 +14,10 @@ function start(){
 
     //--> here we catch that main div because we wanna put slide their
     let maindiv= document.getElementById("maindiv")
+
+    //--> we are making empty beacuse we wanna body empty 
+    //--> if you pasue then start again image got overwrite
+    maindiv.innerHTML=null
 
     //-->  create image element where we wanna show data images
     let img=document.createElement('img')
@@ -20,6 +28,10 @@ function start(){
 
     //--> because inside we want count value increamented thats why we doing this
     count++
+
+    //--> appending image to main div
+    maindiv.append(img)
+
     /* we cant use loop here because looop excute very 
     fast and using loop we cant set time thats why
     we are not using loop here */
@@ -27,7 +39,9 @@ function start(){
     
     //--> for making time functionality and we pass one call back function and how much nilli-second
     //--> opeations got perfomed   
-    setInterval(function(){
+
+    mainid= setInterval(function(){
+
         //--> inside that function we write that code we wanna change every perticular time
 
 
@@ -52,5 +66,7 @@ function start(){
 //--> for pause things 
 function pause(){
 
+    //--> here we passing which we wanna stop or also say that clear
+    clearInterval(mainid)
 
 }
