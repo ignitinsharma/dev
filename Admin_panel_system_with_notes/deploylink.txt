@@ -1,0 +1,4 @@
+
+deploy link of that project
+
+-->  https://admin-panel-ignitinsharma.netlify.app/
