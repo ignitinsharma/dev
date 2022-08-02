@@ -1,12 +1,19 @@
-let maindata=JSON.parse(localStorage("products")) || [];
+
+//step-- 1
+//--> getting value form local storage and use as that into programe
+let maindata=JSON.parse(localStorage.getItem("products")) || [];
 
 
-function display(maindata){
+//step-- 2
+//--> take display function and use as that 
+function display(arr){
 
-    maindata.foreach(function(el){
+    arr.forEach(function(el,index){
+
+        let maindiv=document.createElement("div");
 
         let img=document.createElement("img");
-        img.innerText=el.image;
+        img.src=el.image;
 
         let type=document.createElement("h2");
         type.innerText=el.type;
@@ -24,12 +31,14 @@ function display(maindata){
         removebtn.addEventListener('click', function(){
             deleteitem(index)
         })
-    
-        document.getElementById("all_products").append(img,type,price,desc)
+        
+        maindiv.append(img,type,price,desc)
+        document.getElementById("all_products").append(maindiv)
     
     })
 }
 
+display(maindata);
 
 function deleteitem(ind){
     maindata.splice(ind,1);

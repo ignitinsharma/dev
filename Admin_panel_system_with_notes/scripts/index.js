@@ -35,11 +35,12 @@ let arr=JSON.parse(localStorage.getItem("products")) || [];
         let arrdata= new Productsfun(type, desc, price, image)
 
 
+        //step-- 4 
         //--> pushing that into array because we wanna store multiple users data their thats why
         arr.push(arrdata);
 
 
-        //step-- 4 
+        //step-- 5
         //---> semding data to local storage 
         localStorage.setItem("products", JSON.stringify(arr))
 
