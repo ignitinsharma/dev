@@ -2,4 +2,4 @@ basic take image url and make as slideshow project
 
 deploy link-->
 
-https://slideshow-by-nitinsharma.netlify.app/
+https://slideshow-by-nitinsharma.netlify.app/   
