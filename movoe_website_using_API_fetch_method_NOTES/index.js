@@ -39,7 +39,7 @@ async function maindata() {
 
     //--> we are appending here because data is coming from after coverting
     //--> so thats why we have to pass the data from here to their
-    appendthings(data);
+    display(data);
     console.log(data);
   } catch (error) {
     //--> catch for error value for handling sucess value
@@ -49,10 +49,10 @@ async function maindata() {
 
 maindata();
 
-//--> after fecthing data sucessfully we have to append the things into main
+//--> after fetching data sucessfully we have to append the things and display to main screen.
 
-function appendthings(value) {
-  value.forEach(function (el) {
+function display(value) {
+  value.forEach((el) => {
     let maindiv = document.createElement("div");
 
     let image = document.createElement("img");
@@ -67,7 +67,7 @@ function appendthings(value) {
     let ratings = document.createElement("h3");
     ratings.innerText = el.imdbRating;
 
-    maindiv.append(image, title, date, ratings);
+    maindiv.append(image, title, released, ratings);
 
     contianer.append(maindiv);
   });
