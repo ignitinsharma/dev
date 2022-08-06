@@ -1,16 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-</head>
-<body>
-    <input type="text" name="Enter city name" id="city">
-    <button onclick="weatherfun()">Submit</button>
-    <div id="container"></div>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #header {
+            width: 100%;
+            height: 90px;
+            background-color: black;
+        }
+
+        #header h1 {
+            color: aliceblue;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        #header p {
+            color: aliceblue;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        #forip {
+            width: 80%;
+            height: 80px;
+            background-color: #F2F3F3;
+            border: 1px solid red;
+            margin: auto;
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        #city {
+            padding: 5px 250px 5px 20px;
+            margin-left: 20px;
+        }
+
+        button {
+            padding: 6px 25px;
+            color: #F2F3F3;
+            font-weight: 600;
+            font-size: 15px;
+            border: 0px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background-color: rgb(59, 40, 40);
+        }
+
+        #maincon {
+            width: 80%;
+            height: 300px;
+            background-color: #F2F3F3;
+            border: 1px solid red;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #container {
+            width: 40%;
+            height: 300px;
+            border: 1px solid black;
+        
     
+        }
+
+        #main2{
+            width: 60%;
+            height: 300px;
+            border: 1px solid black; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #city2{
+            color: black;
+        }
+
+        #month2{
+            color: orange;
+        }
+
+        #temp{
+
+        }
+
+        #feelslike{
+
+        }
+        #humidity{
+
+        }
+        #temp_min{
+
+        }
+        #temp_max{
+
+        }
+        .mapouter {
+            position: absolute;
+            text-align: right;
+            height: 100%;
+            width: 300px;
+        }
+
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+
+        }
+
+        #gmap_canvas{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="header">
+        <h1>Weather ForCast </h1>
+        <p>by Nitin</p>
+    </div>
+    <div id="forip">
+        <input type="text" placeholder="Enter city name" id="city">
+        <button onclick="weatherfun()">Search</button>
+    </div>
+    <div id="maincon">
+        <div id="container">
+
+        </div>
+
+        <div id="main2">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="90%" height="80%" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"></iframe>
+            </div>
+        </div>
 </body>
+
 </html>
 <script src="./index.js"></script>
