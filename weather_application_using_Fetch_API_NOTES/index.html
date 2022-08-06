@@ -11,6 +11,7 @@
             margin: 0px;
             padding: 0px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           
         }
 
         #header {
@@ -34,11 +35,13 @@
         #forip {
             width: 80%;
             height: 80px;
-            background-color: #F2F3F3;
-            border: 1px solid red;
+           
             margin: auto;
             display: flex;
             align-items: center;
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
 
 
         }
@@ -46,6 +49,8 @@
         #city {
             padding: 5px 250px 5px 20px;
             margin-left: 20px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
         }
 
         button {
@@ -63,7 +68,7 @@
             width: 80%;
             height: 300px;
             background-color: #F2F3F3;
-            border: 1px solid red;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin: auto;
             display: flex;
             align-items: center;
@@ -72,42 +77,63 @@
         #container {
             width: 40%;
             height: 300px;
-            border: 1px solid black;
-        
+            background-color: white;
+            line-height: 30px;
     
         }
 
         #main2{
             width: 60%;
             height: 300px;
-            border: 1px solid black; 
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        #city2{
-            color: black;
-        }
 
         #month2{
-            color: orange;
+            color: #0093E9;
+            font-weight: 500;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+
+        #city2{
+            color: black;
+            margin-left: 15px;
+           
         }
 
         #temp{
 
+            margin-left: 50px;
+            margin-top: 40px;
         }
 
         #feelslike{
+            margin-left: 15px;
+            font-weight: 500;
+            margin-top: 15px;
 
         }
         #humidity{
 
+            margin-left: 15px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+           
         }
         #temp_min{
-
+            margin-left: 15px;
+            margin-top: 15px;
+           
         }
         #temp_max{
+
+            
+           margin-left: 20px;
+            margin-top: 15px;
+
 
         }
         .mapouter {
@@ -133,7 +159,7 @@
 
 <body>
     <div id="header">
-        <h1>Weather ForCast </h1>
+        <h1>Weather Forecast </h1>
         <p>by Nitin</p>
     </div>
     <div id="forip">
@@ -143,6 +169,7 @@
     <div id="maincon">
         <div id="container">
 
+        
         </div>
 
         <div id="main2">
